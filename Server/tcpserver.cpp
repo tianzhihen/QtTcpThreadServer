@@ -20,7 +20,7 @@ void TcpServer::setMaxPendingConnections(int numConnections)
     this->maxConnections = numConnections;
 }
 
-void TcpServer::incomingConnection(qintptr socketDescriptor) //多线程必须在此函数里捕获新连接
+void TcpServer::incomingConnection(qintptr socketDescriptor) //多线程必须在此函数里捕获新连接.
 {
     if (tcpClient->size() > maxPendingConnections())//继承重写此函数后，QTcpServer默认的判断最大连接数失效，自己实现
     {
